@@ -24,7 +24,7 @@ Libraries/vstsdk/
 Now create a directory `CMake` in the `Build` directory in the root of the project, `cd` into that directory and run `cmake ../.. && make`. Copy the resulting `open303.so` file to a place where your DAW can find it, generally that would be `~/.local/lib/lxvst/`.
 
 ```
-git clone https://github.com/autostatic/open303.git
+git clone https://github.com/lesnoh/open303.git
 cd open303
 wget "https://web.archive.org/web/20181016150224/https://download.steinberg.net/sdk_downloads/vstsdk3610_11_06_2018_build_37.zip" -O Libraries/vstsdk/vstsdk.zip
 unzip Libraries/vstsdk/vstsdk.zip -d Libraries/vstsdk/
