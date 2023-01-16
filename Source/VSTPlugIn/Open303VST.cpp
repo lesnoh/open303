@@ -12,15 +12,25 @@ AudioEffect* createEffectInstance(audioMasterCallback audioMaster)
 Open303VSTProgram::Open303VSTProgram ()
 {
 	// default program values:
-  parameters[WAVEFORM]    = (float) linToLin(   0.85,   0.0,     1.0, 0.0,  1.0);
+//  parameters[WAVEFORM]    = (float) linToLin(   0.85,   0.0,     1.0, 0.0,  1.0);
+//  parameters[TUNING]      = (float) linToLin( 440.0,  400.0,   480.0, 0.0,  1.0);
+//  parameters[CUTOFF]      = (float) expToLin( 500.0,  314.0,  2394.0, 0.0,  1.0);
+//  parameters[RESONANCE]   = (float) linToLin(  50.0,    0.0,   100.0, 0.0,  1.0);
+//  parameters[ENVMOD]      = 0.25f;
+//  parameters[DECAY]       = (float) expToLin( 400.0,  200.0,  2000.0, 0.0,  1.0);
+//  parameters[ACCENT]      = 0.5f;
+//  parameters[VOLUME]      = (float) linToLin(  -6.0,  -60.0,     0.0, 0.0,  1.0);
+//  parameters[FILTER_TYPE] = (float) indexToNormalizedValue(TeeBeeFilter::LP_18, TeeBeeFilter::NUM_MODES);
+
+  parameters[WAVEFORM]    = (float) linToLin(   0.0,   0.0,     1.0, 0.0,  1.0);
   parameters[TUNING]      = (float) linToLin( 440.0,  400.0,   480.0, 0.0,  1.0);
-  parameters[CUTOFF]      = (float) expToLin( 500.0,  314.0,  2394.0, 0.0,  1.0);
-  parameters[RESONANCE]   = (float) linToLin(  50.0,    0.0,   100.0, 0.0,  1.0);
+  parameters[CUTOFF]      = (float) expToLin( 250.0,  200.0,  2500.0, 0.0,  1.0);
+  parameters[RESONANCE]   = (float) linToLin(  75.0,    0.0,   100.0, 0.0,  1.0);
   parameters[ENVMOD]      = 0.25f;
-  parameters[DECAY]       = (float) expToLin( 400.0,  200.0,  2000.0, 0.0,  1.0);
+  parameters[DECAY]       = (float) expToLin( 200.0,  100.0,  2000.0, 0.0,  1.0);
   parameters[ACCENT]      = 0.5f;
   parameters[VOLUME]      = (float) linToLin(  -6.0,  -60.0,     0.0, 0.0,  1.0);
-  parameters[FILTER_TYPE] = (float) indexToNormalizedValue(TeeBeeFilter::LP_18, TeeBeeFilter::NUM_MODES);
+  parameters[FILTER_TYPE] = (float) indexToNormalizedValue(TeeBeeFilter::TB_303, TeeBeeFilter::NUM_MODES);
 
 #ifdef SHOW_INTERNAL_PARAMETERS
   parameters[AMP_SUSTAIN]        = (float) linToLin( -60.0,  -60.0,     0.0, 0.0,  1.0);
@@ -511,6 +521,7 @@ void Open303VST::handleEvent(VstMidiEvent midiEvent)
     case  74: setParameterAutomated( ENVMOD,            (float)midiData[2]/127.f);  break;
     case  75: setParameterAutomated( DECAY,             (float)midiData[2]/127.f);  break;
     case  76: setParameterAutomated( ACCENT,            (float)midiData[2]/127.f);  break;
+    case  77: setParameterAutomated( FILTER_TYPE,       (float)midiData[2]/127.f);  break;
     }
   }
 
