@@ -1,12 +1,12 @@
 cmake_minimum_required(VERSION 3.9)
-project(open303)
+project(michon-open303)
 
 set(CMAKE_CXX_STANDARD 14)
 #add_compile_options("-Wall" "-Wpedantic" "-Wextra" "-fexceptions")
 
 add_subdirectory(Libraries/vstsdk)
 
-add_library(open303 MODULE
+add_library(michon-open303 MODULE
      Source/DSPCode/GlobalDefinitions.h
      Source/DSPCode/GlobalFunctions.cpp
      Source/DSPCode/GlobalFunctions.h
@@ -53,5 +53,5 @@ add_library(open303 MODULE
      ${VSTSDK_SOURCES}
 )
 
-target_include_directories(open303 PRIVATE ${VSTSDK_ROOT})
-set_target_properties(open303 PROPERTIES PREFIX "")
+target_include_directories(michon-open303 PRIVATE ${VSTSDK_ROOT})
+set_target_properties(michon-open303 PROPERTIES PREFIX "")

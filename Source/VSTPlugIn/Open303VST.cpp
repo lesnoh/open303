@@ -503,11 +503,14 @@ void Open303VST::handleEvent(VstMidiEvent midiEvent)
   {
     switch( midiData[1] )
     {
-    case   7:  setParameterAutomated(VOLUME,            (float)midiData[2]/127.f);  break;
-    case  74: setParameterAutomated( CUTOFF,            (float)midiData[2]/127.f);  break;
-    case  71: setParameterAutomated( RESONANCE,         (float)midiData[2]/127.f);  break;
-    case  81: setParameterAutomated( ENVMOD,            (float)midiData[2]/127.f);  break;
-      // more to come....
+    case   7: setParameterAutomated( VOLUME,            (float)midiData[2]/127.f);  break;
+    case  70: setParameterAutomated( WAVEFORM,          (float)midiData[2]/127.f);  break;
+    case  71: setParameterAutomated( TUNING,            (float)midiData[2]/127.f);  break;
+    case  72: setParameterAutomated( CUTOFF,            (float)midiData[2]/127.f);  break;
+    case  73: setParameterAutomated( RESONANCE,         (float)midiData[2]/127.f);  break;
+    case  74: setParameterAutomated( ENVMOD,            (float)midiData[2]/127.f);  break;
+    case  75: setParameterAutomated( DECAY,             (float)midiData[2]/127.f);  break;
+    case  76: setParameterAutomated( ACCENT,            (float)midiData[2]/127.f);  break;
     }
   }
 
@@ -544,9 +547,3 @@ double Open303VST::convertToPitch(unsigned char highByte,unsigned char lowByte)
 
   return pitchValue;
 }
-
-
-
-
-
-

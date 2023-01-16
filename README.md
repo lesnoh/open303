@@ -1,5 +1,15 @@
-# Open303
+# michon Open303
 Open303 is a free and open source emulation of the famous Roland TB-303 bass synthesizer for the VST plugin interface (VST is a trademark of Steinberg Media Technologies GmbH). 
+
+
+case  70: setParameterAutomated( WAVEFORM,          (float)midiData[2]/127.f);  break;
+case  71: setParameterAutomated( TUNING,            (float)midiData[2]/127.f);  break;
+case  72: setParameterAutomated( CUTOFF,            (float)midiData[2]/127.f);  break;
+case  73: setParameterAutomated( RESONANCE,         (float)midiData[2]/127.f);  break;
+case  74: setParameterAutomated( ENVMOD,            (float)midiData[2]/127.f);  break;
+case  75: setParameterAutomated( DECAY,             (float)midiData[2]/127.f);  break;
+case  76: setParameterAutomated( ACCENT,            (float)midiData[2]/127.f);  break;
+
 
 ## Build it yourself
 ### Linux
@@ -21,7 +31,7 @@ Libraries/vstsdk/
 └── vstplugmain.cpp
 ```
 
-Now create a directory `CMake` in the `Build` directory in the root of the project, `cd` into that directory and run `cmake ../.. && make`. Copy the resulting `open303.so` file to a place where your DAW can find it, generally that would be `~/.local/lib/lxvst/`.
+Now create a directory `CMake` in the `Build` directory in the root of the project, `cd` into that directory and run `cmake ../.. && make`. Copy the resulting `michon-open303.so` file to a place where your DAW can find it, generally that would be `~/.local/lib/lxvst/`.
 
 ```
 git clone https://github.com/lesnoh/open303.git
@@ -32,7 +42,7 @@ cp Libraries/vstsdk/VST_SDK/VST2_SDK/public.sdk/source/vst2.x/* Libraries/vstsdk
 cp -a Libraries/vstsdk/VST_SDK/VST2_SDK/pluginterfaces Libraries/vstsdk/
 cmake -B Build/CMake
 cmake --build Build/CMake
-cp Build/CMake/open303.so ~/.local/lib/lxvst/
+cp Build/CMake/michon-open303.so ~/.local/lib/lxvst/
 ```
 
 Thanks to the [Airwindows repository](https://github.com/airwindows/airwindows) for these instructions!
