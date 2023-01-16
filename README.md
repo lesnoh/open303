@@ -3,6 +3,7 @@ Open303 is a free and open source emulation of the famous Roland TB-303 bass syn
 
 Fork with changed MIDI CC Parameters for AKAI MPK mini plus K1-K8 and adjusted default values
 
+```
 MIDI CC 70: WAVEFORM
 MIDI CC 71: TUNING
 MIDI CC 72: CUTOFF
@@ -11,7 +12,7 @@ MIDI CC 74: ENVMOD
 MIDI CC 75: DECAY
 MIDI CC 76: ACCENT
 MIDI CC 77: FILTER_TYPE
-
+```
 
 ## Build it yourself
 ### Linux
