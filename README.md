@@ -1,7 +1,7 @@
-# michon Open303
-Open303 is a free and open source emulation of the famous Roland TB-303 bass synthesizer for the VST plugin interface (VST is a trademark of Steinberg Media Technologies GmbH). 
+# michon Fork of Open303
+Open303 is a free and open source emulation of the famous Roland TB-303 bass synthesizer for the VST plugin interface (VST is a trademark of Steinberg Media Technologies GmbH).
 
-Fork with changed MIDI CC Parameters for AKAI MPK mini plus K1-K8
+Fork with changed MIDI CC Parameters for AKAI MPK mini plus K1-K8 and adjusted default values
 
 MIDI CC 70: WAVEFORM
 MIDI CC 71: TUNING
@@ -33,8 +33,6 @@ Libraries/vstsdk/
 └── vstplugmain.cpp
 ```
 
-Now create a directory `CMake` in the `Build` directory in the root of the project, `cd` into that directory and run `cmake ../.. && make`. Copy the resulting `michon-open303.so` file to a place where your DAW can find it, generally that would be `~/.local/lib/lxvst/`.
-
 ```
 git clone https://github.com/lesnoh/open303.git
 cd open303
@@ -44,12 +42,18 @@ cp Libraries/vstsdk/VST_SDK/VST2_SDK/public.sdk/source/vst2.x/* Libraries/vstsdk
 cp -a Libraries/vstsdk/VST_SDK/VST2_SDK/pluginterfaces Libraries/vstsdk/
 cmake -B Build/CMake
 cmake --build Build/CMake
+```
+Copy the resulting `michon-open303.so` file to a place where your DAW can find it, generally that would be `~/.local/lib/lxvst/`.
+
+```
 cp Build/CMake/michon-open303.so ~/.local/lib/lxvst/
 ```
 
 Thanks to the [Airwindows repository](https://github.com/airwindows/airwindows) for these instructions!
 
 ### The Rest
+Not tested by me, maybe broken
+
 #### Microsoft Visual Studio 2008
 Load the solution-file Open303.sln (in the folder 'Build/VisualStudio2008') with Microsoft Visual Studio 2008 and try to build the plugin. If it works, you will find the results of the compilation (the final .dll and some intermediate files) in the subfolder 'Debug' or 'Release' of 'Build/VisualStudio2008', depending on whether you selected a debug- or release-build. 
 
