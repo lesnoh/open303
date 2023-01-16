@@ -1,14 +1,15 @@
 # michon Open303
 Open303 is a free and open source emulation of the famous Roland TB-303 bass synthesizer for the VST plugin interface (VST is a trademark of Steinberg Media Technologies GmbH). 
 
+Fork with changed MIDI CC Parameters for AKAI MPK mini plus K1-K8
 
-case  70: setParameterAutomated( WAVEFORM,          (float)midiData[2]/127.f);  break;
-case  71: setParameterAutomated( TUNING,            (float)midiData[2]/127.f);  break;
-case  72: setParameterAutomated( CUTOFF,            (float)midiData[2]/127.f);  break;
-case  73: setParameterAutomated( RESONANCE,         (float)midiData[2]/127.f);  break;
-case  74: setParameterAutomated( ENVMOD,            (float)midiData[2]/127.f);  break;
-case  75: setParameterAutomated( DECAY,             (float)midiData[2]/127.f);  break;
-case  76: setParameterAutomated( ACCENT,            (float)midiData[2]/127.f);  break;
+MIDI CC 70: WAVEFORM
+MIDI CC 71: TUNING
+MIDI CC 72: CUTOFF
+MIDI CC 73: RESONANCE
+MIDI CC 74: ENVMOD
+MIDI CC 75: DECAY
+MIDI CC 76: ACCENT
 
 
 ## Build it yourself
